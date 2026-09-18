@@ -85,6 +85,7 @@ nav .nav-bar .logo{
     color: var(--text-color);
     text-decoration: none;
     padding: 10px;
+    transition: color 0.2s ease-in-out;
 }
 
 .nav-links li ::before{
@@ -102,5 +103,10 @@ nav .nav-bar .logo{
 }
 
 .nav-links li:hover ::before{
-    opacity: 1;
+    color: rgb(155, 155, 202);
+    opacity: 0;
+}
+
+.nav-links li:hover{
+    color: rgb(130, 202, 62);
 }
