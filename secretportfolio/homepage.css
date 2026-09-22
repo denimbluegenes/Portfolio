@@ -128,3 +128,190 @@ section {
 h1 {
     font-weight: 400;
 }
+
+/* =========================================================
+   PROJECT FILE ORGANIZER
+   ========================================================= */
+
+.portfolio-organizer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 80px auto 0;
+    padding: 0 30px 100px;
+}
+
+
+/* ===== PROJECT TABS ===== */
+
+.project-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+    border-bottom: 1px solid #7c7a7a;
+}
+
+
+.project-tab {
+    position: relative;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 12px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+/* little folder/file feeling */
+
+.project-tab::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+
+.project-tab:hover::before,
+.project-tab.active-tab::before {
+    transform: scaleX(1);
+}
+
+
+.project-tab:hover {
+    color: rgb(130, 202, 62);
+}
+
+
+.project-tab.active-tab {
+    color: rgb(130, 202, 62);
+}
+
+
+/* =========================================================
+   HOVER IMAGE PREVIEW
+   ========================================================= */
+
+.project-preview {
+    width: 300px;
+    height: 200px;
+    margin: 30px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.project-preview.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CASE STUDIES
+   ========================================================= */
+
+.case-study-container {
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+.case-study {
+    display: none;
+}
+
+
+.case-study.active {
+    display: block;
+}
+
+
+.case-study h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+
+.case-study-role {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+
+.case-study img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 50px;
+}
+
+
+.case-study h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 40px 0 15px;
+}
+
+
+.case-study p {
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .project-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .project-tab {
+        flex-shrink: 0;
+    }
+
+    .project-preview {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+}

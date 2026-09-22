@@ -30,6 +30,211 @@
      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque quidem esse suscipit dolores cum reprehenderit, minima cumque illo iste aperiam quisquam nulla corporis, aliquid accusantium molestiae asperiores beatae aliquam tenetur?
         </p>
     </section>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUZu6QOxWLRbUjyXhzRAQupjFxKfhRIo9824nWvRBz3iwqoUBycCy1hck&s=10" />
+
+    <!-- ===== PROJECT FILE ORGANIZER ===== -->
+<section class="portfolio-organizer">
+
+    <div class="project-tabs">
+
+        <button class="project-tab" 
+                data-project="esports"
+                data-image="images/esports-preview.jpg">
+            SJSU ESPORTS
+        </button>
+
+        <button class="project-tab"
+                data-project="fanime"
+                data-image="images/fanime-preview.jpg">
+            FANIME CON
+        </button>
+
+        <button class="project-tab"
+                data-project="graphinion"
+                data-image="images/graphinion-preview.jpg">
+            GRAPHINION
+        </button>
+
+        <button class="project-tab"
+                data-project="access"
+                data-image="images/access-preview.jpg">
+            ACCESS MAGAZINE
+        </button>
+
+        <button class="project-tab"
+                data-project="norcal"
+                data-image="images/norcal-preview.jpg">
+            NORCAL FURNITURE
+        </button>
+
+    </div>
+
+
+    <!-- Hover preview -->
+    <div class="project-preview">
+        <img id="preview-image" src="" alt="">
+    </div>
+
+
+    <!-- ===== CASE STUDIES ===== -->
+    <div class="case-study-container">
+
+        <div id="esports" class="case-study">
+
+            <h2>SJSU ESPORTS</h2>
+            <p class="case-study-role">
+                Graphic Design Lead & Esports Supervisor
+            </p>
+
+            <img src="projects/images/sjsu-esports-11.png" alt="SJSU Esports project">
+
+            <h3>Overview</h3>
+
+            <p>
+                Add your SJSU Esports case study introduction here.
+            </p>
+
+            <h3>Experience</h3>
+
+            <p>
+                Add the full project experience, process, design decisions,
+                and outcomes here.
+            </p>
+
+            <!-- Add more images/content here -->
+
+        </div>
+
+
+        <div id="fanime" class="case-study">
+
+            <h2>FANIME CON</h2>
+            <p class="case-study-role">
+                Marketing Graphic Designer
+            </p>
+
+            <img src="projects/images/fanimecon-09.png" alt="Fanime Con project">
+
+            <h3>Overview</h3>
+
+            <p>
+                Add your Fanime Con case study here.
+            </p>
+
+        </div>
+
+
+        <div id="graphinion" class="case-study">
+
+            <h2>GRAPHINION</h2>
+            <p class="case-study-role">
+                Graphic Designer
+            </p>
+
+            <img src="images/graphinion-hero.jpg" alt="Graphinion project">
+
+            <h3>Overview</h3>
+
+            <p>
+                Add your Graphinion case study here.
+            </p>
+
+        </div>
+
+
+        <div id="access" class="case-study">
+
+            <h2>ACCESS MAGAZINE</h2>
+            <p class="case-study-role">
+                Graphic Design Intern
+            </p>
+
+            <img src="images/access-hero.jpg" alt="Access Magazine project">
+
+            <h3>Overview</h3>
+
+            <p>
+                Add your Access Magazine case study here.
+            </p>
+
+        </div>
+
+
+        <div id="norcal" class="case-study">
+
+            <h2>NORCAL FURNITURE</h2>
+            <p class="case-study-role">
+                Branding / Graphic Design
+            </p>
+
+            <img src="images/norcal-hero.jpg" alt="NorCal Furniture project">
+
+            <h3>Overview</h3>
+
+            <p>
+                Add your NorCal Furniture case study here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const tabs = document.querySelectorAll(".project-tab");
+const preview = document.querySelector(".project-preview");
+const previewImage = document.querySelector("#preview-image");
+const caseStudies = document.querySelectorAll(".case-study");
+
+
+/* ===== HOVER PREVIEW ===== */
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("mouseenter", () => {
+
+        const image = tab.dataset.image;
+
+        previewImage.src = image;
+        previewImage.alt = tab.textContent.trim();
+
+        preview.classList.add("show");
+
+    });
+
+
+    tab.addEventListener("mouseleave", () => {
+
+        preview.classList.remove("show");
+
+    });
+
+
+    /* ===== CLICK TO OPEN CASE STUDY ===== */
+
+    tab.addEventListener("click", () => {
+
+        const project = tab.dataset.project;
+
+        caseStudies.forEach(caseStudy => {
+            caseStudy.classList.remove("active");
+        });
+
+        document.getElementById(project).classList.add("active");
+
+        tabs.forEach(otherTab => {
+            otherTab.classList.remove("active-tab");
+        });
+
+        tab.classList.add("active-tab");
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
